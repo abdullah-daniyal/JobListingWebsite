@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Job Listings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="header">
+    <img src="./images/bg-header-desktop.svg" alt="header" class="headerimg">
+  </div>
+  <div>
+    <form action="get">
+      <div class="search-container" id="search-container">
+        <input class="searchbox" type="text" name="search" placeholder="Search">
+        <span class="clear-search" onclick="clearSearch()">Clear</span>
+        <input class="searchbutton" type="submit" value="Search">
+      </div>
+    </form>
+  </div>
+
+  <div id="results">
+    <div class="job-cards-container">
+      <!-- Job cards are placed here -->
+    </div>
+  </div>
+  <button id="addButton"
+    style="position: fixed; bottom: 20px; right: 20px; padding: 10px 20px; background-color: hsl(180, 29%, 50%); color: #fff; border: none; border-radius: 10px; cursor:pointer;">
+    <img style="height: 15px;" src="./images/plus.png">
+  </button>
+  <div id="jobEntryModal"
+    style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); justify-content: center; align-items: center;">
+    <div class="jobEntryinner" style="background-color: #fff; padding: 20px; border-radius: 10px; position: relative;">
+      <button class="modal-close" onclick="closeJobEntryModal()">X</button>
+      <form id="jobEntryForm">
+        <div>
+          <label for="company">Company:</label>
+          <input type="text" id="company" required>
+        </div>
+        <div>
+          <label for="position">Position:</label>
+          <input type="text" id="position" required>
+        </div>
+        <div>
+          <label for="postedAt">Posted At:</label>
+          <input type="text" id="postedAt" required>
+        </div>
+        <div>
+          <label for="contract">Contract:</label>
+          <input type="text" id="contract" required>
+        </div>
+        <div>
+          <label for="location">Location:</label>
+          <input type="text" id="location" required>
+        </div>
+        <div>
+          <input type="checkbox" id="new">
+          <label for="new">New</label>
+        </div>
+        <div>
+          <input type="checkbox" id="featured">
+          <label for="featured">Featured</label>
+        </div>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+
+  <div id="jobModal"
+    style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); justify-content: center; align-items: center;">
+    <div id="modalDetails" style="background-color: #fff; padding: 20px; border-radius: 10px;">
+      <!-- Job details will be populated here -->
+      <button class="info-close" onclick="closeModal()" style="position: absolute; right: 20px; top: 20px;">X</button>
+    </div>
+  </div>
+
+  <script src="data.json"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,435 @@
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+.header {
+    width: 100%;
+    height: 160px;
+    background-color: hsl(180, 29%, 50%);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'League Spartan', sans-serif;
+}
+
+
+
+.job {
+    background-color: #fff;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin: 10px 0;
+    box-shadow: 0 8px 8px rgba(18, 137, 125, 0.2);
+    width: 55%;
+    height: 80px;
+    position: relative;
+    left: 25%;
+    position: relative;
+    transition: all 0.3s;
+
+    /* subtle shadow */
+}
+
+.job::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    background-color: hsl(180, 29%, 50%);
+    /* color of the thin line, adjust as needed */
+    /* animation effect for the line's appearance */
+}
+
+.job:hover::before {
+    width: 4px;
+    /* width of the thin line, adjust as needed */
+}
+
+
+.job img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /* for circular company logos */
+    margin-right: 20px;
+}
+
+.job-details {
+    flex-grow: 1;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    /* space between tags */
+}
+
+.tag {
+    background-color: hsl(180, 27%, 84%);
+    color: hsl(180, 29%, 50%);
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+.tag:hover {
+    background-color: hsl(180, 29%, 50%);
+    color: #fff;
+    cursor: pointer;
+}
+
+.headerimg {
+    width: 100%;
+    height: 100%;
+}
+
+.new,
+.featured {
+    background-color: hsl(180, 27%, 84%);
+    color: hsl(180, 29%, 50%);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.featured {
+    background-color: hsl(180, 29%, 50%);
+    color: #fff;
+}
+
+#position:hover {
+    color: hsl(180, 29%, 50%);
+    cursor: pointer;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.modal-content .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.trashicon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.trashicon:hover {
+    cursor: pointer;
+    color: hsl(180, 29%, 50%);
+}
+
+#jobEntryModal {
+    font-family: 'Arial', sans-serif;
+}
+
+#jobEntryModal form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#jobEntryModal label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#jobEntryModal input[type="text"],
+#jobEntryModal input[type="submit"] {
+    padding: 10px 15px;
+    border: 1px solid hsl(180, 27%, 84%);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#jobEntryModal input[type="submit"] {
+    background-color: hsl(180, 29%, 50%);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#jobEntryModal input[type="submit"]:hover {
+    background-color: hsl(180, 24%, 45%);
+}
+
+#jobEntryModal .modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+}
+
+#jobEntryModal .modal-close:hover {
+    color: hsl(180, 29%, 50%);
+}
+
+/* Existing CSS Styles */
+
+/* Add these new styles for the modal */
+.modal-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+}
+
+button.info-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    /* You can adjust this size if needed */
+    cursor: pointer;
+    padding: 5px 10px;
+    /* Adjust padding for better touch/click area */
+}
+
+#modalDetails {
+    width: 28%;
+}
+
+#modalDetails img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+#modalDetails .modal-job-details {
+    width: 100%;
+}
+
+#modalDetails .modal-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.searchbox {
+    flex-grow: 1;
+    /* it'll take up the maximum available space */
+    border: none;
+    height: 100%;
+    border-radius: 5px;
+    /* maintain rounded corners */
+    padding: 0 10px;
+    /* side paddings for text */
+}
+
+.searchbutton {
+    height: 38px;
+    border-radius: 5px;
+    border: none;
+    background-color: hsl(180, 29%, 50%);
+    color: white;
+    font-weight: bold;
+    margin-left: 10px;
+    padding: 0 15px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    /* top: -30px; */
+    width: 55%;
+    height: 50px;
+    border-radius: 5px;
+    border: 2px solid hsl(180, 27%, 84%);
+    padding: 0 10px;
+    position: relative;
+    left: 25%;
+    top: -30px;
+    background-color: #fff;
+}
+
+.searchbox {
+    flex-grow: 1;
+    border: none;
+    height: 100%;
+    border-radius: 5px;
+    padding-right: 30px;
+    /* Make room for the "Clear" span */
+    padding-left: 10px;
+}
+
+.search-tag {
+    background-color: hsl(180, 29%, 50%);
+    color: white;
+    margin-right: 5px;
+    padding: 5px 10px;
+    border-radius: 14px;
+    position: relative;
+    top: 0;
+    display: inline-block;
+}
+
+.search-tag span {
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+
+
+.searchbox::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.clear-search {
+    position: absolute;
+    right: 100px;
+    top: 38%;
+    /* transform: translateY(-50%); */
+    /* Vertically center it */
+    cursor: pointer;
+    background: #fff;
+    padding: 0 5px;
+}
+
+/* Existing CSS styles */
+
+/* Add these media queries at the end of your CSS styles */
+
+@media only screen and (max-width: 376px) {
+    .header {
+        height: 120px;
+    }
+
+    #modalDetails {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .searchbox,
+    .searchbutton,
+    .job {
+        display: block;
+        width: 90%;
+        left: 5%;
+    }
+
+    .searchbox {
+        top: 10px;
+    }
+
+    .searchbutton {
+        display: none;
+    }
+
+    #selected-tags {
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .tag {
+        font-size: 14px;
+        margin: 5px 5px;
+    }
+
+    .job {
+        height: auto;
+        flex-direction: column;
+        padding: 10px;
+        gap: 10px;
+        transition: all 0.3s;
+    }
+
+    /* hover on job and gives a neat thin  line with trantion of 0.3s*/
+    .job::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        background-color: hsl(180, 29%, 50%);
+        /* color of the thin line, adjust as needed */
+        /* animation effect for the line's appearance */
+    }
+
+    .job:hover::before {
+        width: 4px;
+        /* width of the thin line, adjust as needed */
+    }
+
+    .job img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .job-details {
+        align-items: center;
+
+    }
+
+    .tags {
+        justify-content: left;
+        gap: 5px;
+    }
+
+    #addButton {
+        right: 10px;
+    }
+
+    #jobEntryModal .modal-content,
+    #jobModal #modalDetails {
+        width: 90%;
+    }
+
+    .clear-search {
+        right: 10px;
+    }
+
+    #modalDetails {
+        width: 90%;
+    }
+
+    .jobEntryinner {
+        width: 88%;
+    }
+}
